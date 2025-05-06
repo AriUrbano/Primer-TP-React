@@ -1,18 +1,25 @@
 import React from 'react';
-import FormularioJugador from './componentes/FormularioJugador';
-import ListadoJugadores from './componentes/ListadoJugador';
+import Formulario from './componentes/Formulario';
+import Listado from './componentes/Listado';
 import './App.css';
-import Jugador from './componentes/Jugador';
+
+
 function App() {
   return (
-    <>
-      <h1>Administrador de Jugadores de Fútbol</h1>
-      <div>
-      <FormularioJugador/>
-      <ListadoJugadores/>
+    <div>
+      <h1>ADMINISTRADOR DE PACIENTES</h1>
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+           <Formulario/>
+          </div>
+          <div className="one-half column">
+           <Listado/>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
-export default App; 
+export default App;
