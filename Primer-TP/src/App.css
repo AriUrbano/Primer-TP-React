@@ -31,8 +31,3 @@ h1, h2 {
   flex-wrap: wrap;
 }
 
-.one-half.column {
-  width: 50%;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
