@@ -5,13 +5,17 @@ import './App.css';
 
 
 function App() {
+  const SacarDatos = (Datos) => {
+    console.log(Datos);
+  };
   return (
+    
     <div>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
       <div className="container">
         <div className="row">
           <div className="one-half column">
-           <Formulario/>
+           <Formulario onAgregarTarjeta={SacarDatos}/>
           </div>
           <div className="one-half column">
            <Listado/>

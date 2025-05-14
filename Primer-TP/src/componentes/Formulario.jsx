@@ -1,11 +1,18 @@
-import React from 'react';
+import { useState } from 'react';
 import './Formulario.css';
 
-const Formulario = () => {
+const Formulario = (Datos) => {
+  const [contenido] = useState('');
+
+  const tomarValores = (e) =>{ 
+    e.preventDefault();
+    console.log(contenido);
+    Datos(contenido);
+  }
   return (
     <div>
       <h2>Crear mi Cita</h2>
-      <form>
+      <form onSubmit={tomarValores}>
         <label>Nombre Mascota</label>
         <input 
           type="text" 

@@ -1,7 +1,8 @@
-import React from 'react';
+
 import './Cita.css';
 
 const Cita = ({ mascota, propietario, fecha, hora, sintomas }) => {
+  
   return (
     <div className="cita  ">
       <p>Mascota: <span>{mascota}</span></p>
