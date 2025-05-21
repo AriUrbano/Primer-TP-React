@@ -1,17 +1,43 @@
 import { useState } from 'react';
 import './Formulario.css';
 
-const Formulario = (Datos) => {
-  const [contenido] = useState('');
+const Formulario = ({ onAgregarCita }) => {
+ 
+  const [error, setError] = useState(false);
 
-  const tomarValores = (e) =>{ 
+  const tomarValores = (e) => {
     e.preventDefault();
-    console.log(contenido);
-    Datos(contenido);
-  }
+    
+    const mascota = e.target.mascota.value;
+    const propietario = e.target.propietario.value;
+    const fecha = e.target.fecha.value;
+    const hora = e.target.hora.value;
+    const sintomas = e.target.sintomas.value;
+
+    if (!mascota || !propietario || !fecha || !hora || !sintomas) {
+      setError(true);
+      return;
+    }
+
+    setError(false);
+
+    const nuevaCita = {
+      mascota,
+      propietario,
+      fecha,
+      hora,
+      sintomas
+    };
+
+    onAgregarCita(nuevaCita);
+
+    e.target.reset();
+  };
+
   return (
     <div>
       <h2>Crear mi Cita</h2>
+      {error && <div className="error">Todos los campos son obligatorios</div>}
       <form onSubmit={tomarValores}>
         <label>Nombre Mascota</label>
         <input 
